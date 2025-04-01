@@ -1,1 +1,31 @@
 /* You can add global styles to this file, and also import other style files */
+@import "tailwindcss";
+@plugin "daisyui" {
+  themes: sunset --default, dark --prefersdark;
+}
+
+@theme {
+  --font-montserrat: montserrat;
+
+  --animate-fadeIn: fadeIn 0.3s ease-in-out;
+  @keyframes fadeIn {
+    0% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+}
+
+@layer utilities {
+  @font-face {
+    font-family: "montserrat";
+    src: url("../public/assets/fonts/Montserrat-Medium.ttf") format("truetype");
+  }
+
+  .font-custom {
+    font-family: "montserrat", sans-serif;
+  }
+}
+

@@ -1,0 +1,13 @@
+<h1 class="text-3xl font-">Sección de {{ gender() }}</h1>
+
+<div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-8 mt-12">
+  @for (p of productsResource.value()?.products; track $index) {
+
+  <app-product-card [product]="p"></app-product-card>
+
+  }
+</div>
+<app-pagination
+  [pages]="productsResource.value()?.pages ?? 0"
+  [currentPage]="paginationService.currentPage()"
+/>

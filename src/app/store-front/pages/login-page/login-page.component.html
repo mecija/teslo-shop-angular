@@ -1,0 +1,56 @@
+<form class="flex flex-col gap-2" [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+  <label class="input">
+    <svg
+      class="h-[1em] opacity-50"
+      xmlns="http://www.w3.org/2000/svg"
+      viewBox="0 0 24 24"
+    >
+      <g
+        stroke-linejoin="round"
+        stroke-linecap="round"
+        stroke-width="2.5"
+        fill="none"
+        stroke="currentColor"
+      >
+        <path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"></path>
+        <circle cx="12" cy="7" r="4"></circle>
+      </g>
+    </svg>
+    <input
+      formControlName="email"
+      type="input"
+      required
+      value="test1@google.com"
+      placeholder="Email"
+    />
+  </label>
+
+  <label class="input">
+    <input
+      formControlName="password"
+      type="password"
+      required
+      placeholder="Password"
+      value="Abc123"
+    />
+  </label>
+
+  <button type="submit" class="btn btn-secondary">Ingresar</button>
+
+  @if (hasError()) {
+    <div role="alert" class="alert alert-error animate-fadeIn fixed bottom-5 justify-center">
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 shrink-0 stroke-current" fill="none" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 14l2-2m0 0l2-2m-2 2l-2-2m2 2l2 2m7-2a9 9 0 11-18 0 9 9 0 0118 0z" />
+        </svg>
+        <span>Error, por favor verifica la informacion</span>
+      </div>
+  }
+
+  <p class="text-black">
+    ¿No tienes cuenta?
+
+    <a routerLink="/auth/register" class="text-primary cursor-pointer"
+      >Crea una aqui</a
+    >
+  </p>
+</form>

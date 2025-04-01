@@ -1,0 +1,15 @@
+<h1 class="text-3xl font-">Todos los productos</h1>
+<h2 class="text-xl mb-5">Para todos los gustos</h2>
+
+<app-pagination [pages]="productsResource.value()?.pages ?? 0"
+  [currentPage]="paginationService.currentPage()"
+
+/>
+
+<div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-8">
+  @for (p of productsResource.value()?.products; track $index) {
+
+  <app-product-card [product]="p"></app-product-card>
+
+  }
+</div>
