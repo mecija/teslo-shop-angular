@@ -1,0 +1,10 @@
+[[redirects]]
+  from = "/"
+  to = "https://mef-nest-testlo-shop.onrender.com"
+  status = 200
+  force = true
+  headers = {X-From = "Netlify"}
+[[headers]]
+  for = "/*"
+  [headers.values]
+    Access-Control-Allow-Origin = "*"
