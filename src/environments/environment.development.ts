@@ -1,3 +1,3 @@
 export const environment = {
-    baseURL :'http://localhost:3000/api'
+    baseURL :'https://mef-nest-testlo-shop.onrender.com/api'
 };
