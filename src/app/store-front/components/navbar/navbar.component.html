@@ -45,6 +45,17 @@
             >Kids</a
           >
         </li>
+
+        @if (authService.isAdmin()) {
+        <li>
+          <a
+            class="btn btn-secondary"
+            routerLinkActive="btn-secondary"
+            routerLink="/admin/"
+            >Administrador</a
+          >
+        </li>
+        }
       </ul>
     </div>
     <a routerLink="/" class="btn btn-ghost text-xl font-montserrat">
@@ -79,8 +90,7 @@
         >
       </li>
 
-      @if (authService.isAdmin())
-      {
+      @if (authService.isAdmin()) {
       <li>
         <a
           class="btn btn-secondary"
